@@ -1,5 +1,7 @@
 # 창밖의 레시피
 날씨에 따른 메뉴 추천 및 레시피 제공 프로그램
+> 2022.10.04~2022.10.07
+> 유지인, 서보선, 조준희 (3명)
 ## 프로젝트 개요
 ### 사용 Open API
 * OpenWeatherMap API https://openweathermap.org/
@@ -10,10 +12,6 @@
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/></a>
   <img src="https://img.shields.io/badge/Javascript-ffb13b?style=flat-square&logo=javascript&logoColor=white"/></a>
   
-### 팀구성
-유지인, 서보선, 조준희 (3명)
-### 프로젝트 기간
-4일(2022.10.04~2022.10.07)
 ### 흐름도
 ![Alt text](flow.png)
 
