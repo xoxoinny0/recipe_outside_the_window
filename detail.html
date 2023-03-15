@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세미프로젝트 2조</title>
+    <link rel="stylesheet" href="./assets/css/main.min.css">
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/cb9a8df948.js" crossorigin="anonymous"></script>
+</head>
+<body class="detail">
+    <!-- header -->
+    <div class="topBot" data-include="inc/header.html"></div>
+
+    <div class="loading active">
+        <img src="./assets/img/loading.gif" alt="">
+    </div>
+    
+    <div class="detail_wrap">
+        <h1>RECIPE</h1>
+        <div class="img_wrap">
+            <img src="" alt="main_img" />
+            <div class="description">
+                <p>이름 : <span class="description__content"></span></p>
+                <p>재료 : <span class="description__content"></span></p>
+                <p>방식 : <span class="description__content"></span></p>
+                <p>타입 : <span class="description__content"></span></p>
+                <p>칼로리 : <span class="description__content"></span>kcal</p>
+            </div>  
+        </div>
+        
+        <div class="slide-right">
+            <a href="#" title="next step"><i class="fa-solid fa-angles-right"></i></a>
+        </div>
+
+        <div class="go_to_youtube">
+            <a href="#" title="youtube"><img src="./assets/img/youtube.png" alt="youtubelogo" /></a>
+        </div>
+    </div>
+    
+    <!-- footer -->
+    <div class="topBot" data-include="inc/footer.html"></div>
+
+    <script src="./assets/node_modules/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/include.js"></script>
+    <script type="module" src="./assets/js/viewRecipe.js"></script>
+
+    <script>
+        document.querySelector('.img_wrap').addEventListener('mouseover', e => {
+            document.querySelector('.description').style.display = 'block';
+        });
+
+        document.querySelector('.img_wrap').addEventListener('mouseout', e => {
+            document.querySelector('.description').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

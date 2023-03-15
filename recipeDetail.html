@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레시피 정보</title>
+    <link rel="stylesheet" href="./assets/css/main.min.css">
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/cb9a8df948.js" crossorigin="anonymous"></script>
+</head>
+<body class="recipes">
+    <div class="topBot" data-include="inc/header.html"></div>
+
+    <div class="loading active">
+        <img src="./assets/img/loading.gif" alt="loading">
+    </div>
+    
+    <div class="main-wrap">
+        <div class="top">
+            <div class="top__title">
+                <h1>레시피 관리</h1>
+                <h2>- 목록</h2>
+            </div>
+            <div class="top__link">
+                <a href="./addRecipes.html">
+                    <h3>추가하기</h3>
+                </a>
+                <a href="./recipes.html">
+                    <h3>목록보기</h3>
+                </a>
+            </div>
+        </div>
+
+        <div class="detail">
+            <div>
+                <label for="ATT_FILE_NO_MAIN">메인 이미지</label>
+                <img src="" alt="음식 메인 이미지" id="ATT_FILE_NO_MAIN">
+            </div>
+            <div>
+                <label for="RCP_PAT2">요리 종류</label>
+                <p id="RCP_PAT2"></p>
+            </div>
+            <div>
+                <label for="RCP_WAY2">조리 방식</label>
+                <p id="RCP_WAY2"></p>
+            </div>
+            <div>
+                <label for="RCP_NM">이름</label>
+                <p id="RCP_NM"></p>
+            </div>
+            <div>
+                <label for="RCP_PARTS_DTLS">재료</label>
+                <p id="RCP_PARTS_DTLS"></p>
+            </div>
+            <div>
+                <label for="HASH_TAG">해시태그</label>
+                <p id="HASH_TAG"></p>
+            </div>
+            <div>
+                <label for="INFO_WGT">중량(1인분)</label>
+                <p id="INFO_WGT"></p>
+            </div>
+            <div>
+                <label for="INFO_ENG">열량</label>
+                <p id="INFO_ENG"></p>
+            </div>
+            <div>
+                <label for="INFO_CAR">탄수화물</label>
+                <p id="INFO_CAR"></p>
+            </div>
+            <div>
+                <label for="INFO_PRO">단백질</label>
+                <p id="INFO_PRO"></p>
+            </div>
+            <div>
+                <label for="INFO_FAT">지방</label>
+                <p id="INFO_FAT"></p>
+            </div>
+            <div>
+                <label for="INFO_NA">나트륨</label>
+                <p id="INFO_NA"></p>
+            </div>
+            <div>
+                <label for="temp">온도</label>
+                <p id="temp"></p>
+            </div>
+            <div>
+                <label for="time">시간</label>
+                <p id="time"></p>
+            </div>
+            <div>
+                <button id="btnDel">삭제</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="topBot" data-include="inc/footer.html"></div>
+    
+    <script src="./assets/node_modules/axios/dist/axios.min.js"></script>
+    <script src="assets/js/include.js"></script>
+    <script type="module" src="./assets/js/recipeDetail.js"></script>
+    <script type="module">
+        const btnDel = document.querySelector('#btnDel');
+
+        btnDel.addEventListener('click', async e => {
+            e.preventDefault();
+
+            const current = e.currentTarget;
+            const id = current.dataset.id;
+            const name = document.querySelector('#RCP_NM').innerHTML;
+
+            if (confirm(`정말 ${name}을 삭제하시겠습니까?`)) {
+                try {
+                    await axios.delete(`http://localhost:3001/recipes/${id}`);
+                } catch (e) {
+                    console.error(e);
+                    alert('요청을 처리하는데 실패했습니다.');
+                    return;
+                }
+
+                window.location = 'recipes.html';
+            }
+        });
+    </script>
+</body>
+</html>

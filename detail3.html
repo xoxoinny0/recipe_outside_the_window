@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세미프로젝트 2조</title>
+    <link rel="stylesheet" href="./assets/css/main.min.css">
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/cb9a8df948.js" crossorigin="anonymous"></script>
+</head>
+<body class="detail3">
+    <!-- header -->
+    <div class="topBot" data-include="inc/header.html"></div>
+
+    <div class="loading active">
+        <img src="./assets/img/loading.gif" alt="">
+    </div>
+
+    <div class="detail_wrap">
+        <div class="wrap">
+            <div class="wrap2">
+             <div class="box left"><a href=""><img src="" /></a></div>
+             <div class="box right">
+                 <p>title: <span class="title"><a href=""></a></span></p>
+                 <br />
+                 <p>채널명: <span class="channelTitle"></span></p>
+                 <br />
+                 <p><span class="description"></span></p>
+             </div>
+            </div>
+            <div class="wrap2">
+             <div class="box left"><a href=""><img src="" /></a></div>
+             <div class="box right">
+                 <p>title: <span class="title"></span></p>
+                 <br />
+                 <p>채널명: <span class="channelTitle"></span></p>
+                 <br />
+                 <p><span class="description"></span></p>
+             </div>
+            </div>
+            <div class="wrap2">
+             <div class="box left"><a href=""><img src="" /></a></div>
+             <div class="box right">
+                 <p>title: <span class="title"></span></p>
+                 <br />
+                 <p>채널명: <span class="channelTitle"></span></p>
+                 <br />
+                 <p><span class="description"></span></p>
+             </div>
+            </div>
+         </div>
+
+        <div class="slide-left">
+            <a href="#"><i class="fa-solid fa-angles-left"></i></a>
+        </div>
+
+        <div class="go_to_youtube">
+            <a href="#" title="youtube"><img src="./assets/img/youtube.png" alt="youtubelogo" /></a>
+        </div>
+
+        <div class="to_back_page">
+            <a href="#" ><img src="./assets/img/back.png" alt="back"></a>
+        </div>
+    </div>
+    
+    <!-- footer -->
+    <div class="topBot" data-include="inc/footer.html"></div>
+
+    <script src="./assets/node_modules/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/include.js"></script>
+    <script type="module">
+        import utilHelper from './assets/helper/UtilHelper.js';
+
+        const params = utilHelper.getUrlParams();
+
+        if (!params.id) {
+            alert('알 수 없는 접근입니다');
+            window.location = './index.html';
+        }
+
+        console.log(params.step);
+
+        document.querySelector('.slide-left > a').setAttribute('href', `detail2.html?id=${params.id}&step=${Number(params.step) - 1}`);
+        document.querySelector('.to_back_page > a').setAttribute('href', `detail.html?id=${params.id}`);
+    </script>
+    <script type="module" src="./assets/js/youtube.js"></script>
+
+</body>
+</html>

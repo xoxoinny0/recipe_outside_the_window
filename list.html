@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세미프로젝트 2조</title>
+    <link rel="stylesheet" href="./assets/css/main.min.css">
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/cb9a8df948.js" crossorigin="anonymous"></script>
+</head>
+<body class="list">
+    <!-- Header 소환 -->
+    <div class="topBot" data-include="inc/header.html"></div>
+
+    <!-- 전체를 감싸는 section -->
+    <div class="section-wrap">
+        <section class="section">
+            <div class="section-top">  
+                <div class="section-topL">
+                    <label for="time">시간</label>
+                    <select name="시간" id="time">
+                        <option value="">-</option>
+                        <option value="brunch">브런치</option>
+                        <option value="meal">식사</option>
+                        <option value="night">야식</option>
+                        <option value="snack">간식</option>
+                    </select>
+                    <label for="temp">온도</label>
+                    <select name="온도" id="temp">
+                        <option value="">-</option>
+                        <option value="hot">뜨거운 음식</option>
+                        <option value="prop">적당한 음식</option>
+                        <option value="cold">차가운 음식</option>
+                    </select>
+                </div>
+
+                <div class="section-topR">
+                    <button id="search" title="검색"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+
+            <!-- 인피니티 스크롤이 구현될 리스트들.-->
+            <div class="section-bot"></div>
+
+            <div class="loading active">
+                <img src="./assets/img/loading.gif" alt="loading">
+            </div>
+
+        </section>
+    </div>
+    
+
+    <!-- Footer 소환 -->
+    <div class="topBot" data-include="inc/footer.html"></div>
+
+    <script src="./assets/node_modules/axios/dist/axios.min.js"></script>
+    <script src="assets/js/include.js"></script>
+    <script type="module" src="./assets/js/list.js"></script>
+    <script type="module">
+        document.querySelector('#search').addEventListener('click', e => {
+            const time = document.querySelector('#time').value;
+            const temp = document.querySelector('#temp').value;
+            window.location = `list.html?time=${time}&temp=${temp}`;
+        });
+    </script>
+</body>
+</html>

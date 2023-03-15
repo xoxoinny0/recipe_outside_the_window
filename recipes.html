@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레시피 목록</title>
+    <link rel="stylesheet" href="./assets/css/main.min.css">
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/cb9a8df948.js" crossorigin="anonymous"></script>
+</head>
+<body class="recipes">
+    <div class="topBot" data-include="inc/header.html"></div>
+
+    <div class="loading active">
+        <img src="./assets/img/loading.gif" alt="loading">
+    </div>
+    
+    <div class="main-wrap">
+        <div class="top">
+            <div class="top__title">
+                <h1>레시피 관리</h1>
+                <h2>- 목록</h2>
+            </div>
+            <div class="top__link">
+                <a href="./addRecipes.html">
+                    <h3>추가하기</h3>
+                </a>
+                <a href="./recipes.html">
+                    <h3>목록보기</h3>
+                </a>
+            </div>
+        </div>
+        
+        <div class="recipe-list">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>시간</td>
+                        <td>온도</td>
+                        <td>종류</td>
+                        <td>방식</td>
+                        <td>이름</td>
+                        <td>-</td>
+                    </tr>
+                </thead>
+                <tbody id="listBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="topBot" data-include="inc/footer.html"></div>
+
+    <script src="./assets/node_modules/axios/dist/axios.min.js"></script>
+    <script src="assets/js/include.js"></script>
+    <script src="./assets/js/recipes.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+@import url('./reset.min.css');
+@import url('./variables.min.css');
+
+@import url('./headerFooter.min.css');
+@import url('./index.min.css');
+@import url('./recipes.min.css');
+@import url('./addRecipes.min.css');
+@import url('./addRecipes-manual.min.css');
+@import url('./list.min.css');
+@import url('./detail.min.css');
+@import url('./detail2.min.css');
+@import url('./detail3.min.css');
+
+.loading {
+    display: none;
+    width: 300px;
+    height: 300px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.main-wrap {
+    display: none;
+    width: 1130px;
+    margin: auto;
+    padding: 60px 10px 50px;    
+}
+
+.loading.active,
+.main-wrap.active,
+.detail_wrap.active {
+    display: block;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레시피 추가(상세)</title>
+    <link rel="stylesheet" href="./assets/css/main.min.css">
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/cb9a8df948.js" crossorigin="anonymous"></script>
+</head>
+<body class="recipes">
+    <div class="topBot" data-include="inc/header.html"></div>
+
+    <div class="loading active">
+        <img src="./assets/img/loading.gif" alt="loading">
+    </div>
+    
+    <div class="main-wrap">
+        <div class="top">
+            <div class="top__title">
+                <h1>레시피 관리</h1>
+                <h2>- 목록</h2>
+            </div>
+            <div class="top__link">
+                <a href="./addRecipes.html">
+                    <h3>추가하기</h3>
+                </a>
+                <a href="./recipes.html">
+                    <h3>목록보기</h3>
+                </a>
+            </div>
+        </div>
+        
+        <form action="form" id="addRecipe-form">
+            <div class="form-group">
+                <label for="ATT_FILE_NO_MAIN">메인 이미지</label>
+                <div>
+                    <img src="" alt="음식 완성 사진" id="ATT_FILE_NO_MAIN">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="RCP_PAT2">요리 종류</label>
+                <div><input type="text" name="pat" id="RCP_PAT2" disabled></div>
+            </div>
+            <div class="form-group">
+                <label for="RCP_WAY2">조리 방식</label>
+                <div><input type="text" name="way" id="RCP_WAY2" disabled></div>
+            </div>
+            <div class="form-group">
+                <label for="RCP_NM">이름</label>
+                <div><input type="text" name="name" id="RCP_NM" disabled></div>
+            </div>
+            <div class="form-group">
+                <label for="RCP_PARTS_DTLS">재료</label>
+                <div><input type="text" name="material" id="RCP_PARTS_DTLS" disabled></div>
+            </div>
+            <div class="form-group">
+                <label for="HASH_TAG">해시태그</label>
+                <div><input type="text" name="hashtag" id="HASH_TAG" disabled></div>
+            </div>
+            <div class="form-group">
+                <label for="INFO_WGT">중량(1인분)</label>
+                <div><input type="text" name="wgt" id="INFO_WGT" disabled></div>
+            </div>
+            <div class="form-group">
+                <label for="INFO_ENG">열량</label>
+                <div><input type="text" name="eng" id="INFO_ENG" disabled></div>
+            </div>
+            <div class="form-group">
+                <label for="INFO_CAR">탄수화물</label>
+                <div><input type="text" name="car" id="INFO_CAR" disabled></div>
+            </div>
+            <div class="form-group">
+                <label for="INFO_PRO">단백질</label>
+                <div><input type="text" name="pro" id="INFO_PRO" disabled></div>
+            </div>
+            <div class="form-group">
+                <label for="INFO_FAT">지방</label>
+                <div><input type="text" name="fat" id="INFO_FAT" disabled></div>
+            </div>
+            <div class="form-group">
+                <label for="INFO_NA">나트륨</label>
+                <div><input type="text" name="na" id="INFO_NA" disabled></div>
+            </div>
+            <div class="form-group">
+                <label for="step">레시피 단계 개수</label>
+                <div><input type="number" name="step" id="step" disabled></div>
+            </div>
+            <div class="form-group">
+                <label for="time">시간</label>
+                <div>
+                    <select name="time" id="time">
+                        <option value="brunch">브런치</option>
+                        <option value="meal">식사</option>
+                        <option value="night">야식</option>
+                        <option value="snack">간식</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="temp">온도</label>
+                <div>
+                    <select name="temp" id="temp">
+                        <option value="hot">뜨거운</option>
+                        <option value="cold">차가운</option>
+                        <option value="prop">적당한</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="submit" id="addRecipe-form__submit">저장하기</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="topBot" data-include="inc/footer.html"></div>
+
+    <script src="./assets/node_modules/axios/dist/axios.min.js"></script>
+    <script src="assets/js/include.js"></script>
+    <script type="module" src="./assets/js/addRecipes-manual.js"></script>
+</body>
+</html>
