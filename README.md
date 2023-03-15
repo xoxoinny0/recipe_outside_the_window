@@ -5,6 +5,12 @@
 * OpenWeatherMap API https://openweathermap.org/
 * 식약처 조리제품 레시피 Open API https://www.foodsafetykorea.go.kr/api/
 * Youtube API https://console.cloud.google.com/
+### 기술스택
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/></a>&nbsp 
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/></a>&nbsp
+  <img src="https://img.shields.io/badge/Javascript-ffb13b?style=flat-square&logo=javascript&logoColor=white"/></a>&nbsp
+</p>
 ### 팀구성
 유지인, 서보선, 조준희 (3명)
 ### 프로젝트 기간
